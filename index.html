@@ -5,63 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LNCT Group</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800 text-base md:text-lg">
+<body class="bg-white text-gray-800 text-base md:text-lg font-sans">
 
 <!-- Navigation Bar -->
-<nav class="fixed top-0 left-0 w-full z-50 bg-black shadow-md px-8 py-4 flex items-center justify-between">
-  <a href="https://www.lnct.ac.in/" target="_blank" class="flex items-center space-x-2">
-    <img src="images/lnct-logo.png" alt="LNCT Logo" class="w-14 h-auto">
+<nav class="fixed top-0 left-0 w-full z-50 bg-black px-6 py-4 shadow-md flex items-center justify-between">
+  <a href="https://www.lnct.ac.in/" target="_blank" class="flex items-center">
+    <img src="images/lnct-logo.png" alt="LNCT Logo" class="w-12 h-auto" />
   </a>
-  <div class="space-x-10 hidden md:flex text-lg">
-    <a href="#institutions" class="text-red-800 hover:text-orange-600 font-medium">Institutions</a>
-    <a href="#companies" class="text-red-700 hover:text-orange-600 font-medium">Companies</a>
-    <a href="#events" class="text-red-700 hover:text-orange-600 font-medium">Events</a>
-    <a href="#contact" class="text-red-700 hover:text-orange-600 font-medium">Contact</a>
+  <div class="hidden md:flex space-x-10 text-lg">
+    <a href="#institutions" class="text-orange-400 hover:text-orange-300 font-medium">Institutions</a>
+    <a href="#companies" class="text-orange-400 hover:text-orange-300 font-medium">Companies</a>
+    <a href="#events" class="text-orange-400 hover:text-orange-300 font-medium">Events</a>
+    <a href="#contact" class="text-orange-400 hover:text-orange-300 font-medium">Contact</a>
   </div>
 </nav>
 
 <!-- Header Section -->
 <header class="relative w-full h-screen overflow-hidden">
   <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-    <source src="videos/videoplayback.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+    <source src="videos/videoplayback.mp4" type="video/mp4" />
   </video>
-  <div class="relative z-10 flex flex-col items-center justify-center h-full w-full text-center text-white bg-black bg-opacity-50 px-4">
-    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Welcome to LNCT Group</h1>
-    <p class="text-base sm:text-lg md:text-xl">Empowering education, innovation & leadership for a brighter tomorrow</p>
+  <div class="relative z-10 flex flex-col items-center justify-center h-full w-full text-center text-white bg-black bg-opacity-60 px-4">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">Welcome to LNCT Group</h1>
+    <p class="text-lg sm:text-xl md:text-2xl max-w-xl">Empowering education, innovation & leadership for a brighter tomorrow</p>
   </div>
 </header>
 
 <!-- Institutions Section -->
 <section id="institutions" class="py-20 bg-gray-100 px-4">
-  <div class="max-w-6xl mx-auto text-center">
-    <h3 class="text-3xl font-semibold mb-12 text-orange-600">Our Institutions</h3>
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-12 text-orange-600">Our Institutions</h2>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-      <a href="https://lnct.ac.in" target="_blank" class="block p-4 rounded-xl shadow hover:shadow-xl transition hover:bg-orange-50">
-        <img src="images/lnct-main.jpg" alt="LNCT Main" class="w-full h-32 object-cover rounded-md mb-3">
-        <h4 class="text-lg font-semibold mb-2">Lakshmi Narain College of Technology</h4>
-        <p class="text-gray-700 text-sm">Pioneer in engineering, shaping India’s top tech talent since 1994.</p>
+      <!-- Repeatable card template -->
+      <a href="https://lnct.ac.in" target="_blank" class="transform transition hover:scale-105 hover:bg-orange-50 p-4 rounded-xl shadow">
+        <img src="images/lnct-main.jpg" alt="LNCT Main" class="w-full h-32 object-cover rounded mb-3" />
+        <h4 class="text-lg font-semibold mb-1">Lakshmi Narain College of Technology</h4>
+        <p class="text-sm text-gray-700">Pioneer in engineering, shaping India’s top tech talent since 1994.</p>
       </a>
-      <a href="https://www.lnct.ac.in/lncts/" target="_blank" class="block p-4 rounded-xl shadow hover:shadow-xl transition hover:bg-orange-50">
-        <img src="images/lncts.jpg" alt="LNCTS" class="w-full h-32 object-cover rounded-md mb-3">
-        <h4 class="text-lg font-semibold mb-2">Lakshmi Narain College of Technology and Science</h4>
-        <p class="text-gray-700 text-sm">Excelling in academics, innovation, and industry-focused learning.</p>
+      <a href="https://www.lnct.ac.in/lncts/" target="_blank" class="transform transition hover:scale-105 hover:bg-orange-50 p-4 rounded-xl shadow">
+        <img src="images/lncts.jpg" alt="LNCTS" class="w-full h-32 object-cover rounded mb-3" />
+        <h4 class="text-lg font-semibold mb-1">LNCT and Science</h4>
+        <p class="text-sm text-gray-700">Excelling in academics, innovation, and industry-focused learning.</p>
       </a>
-      <a href="https://www.lnct.ac.in/lncte/" target="_blank" class="block p-4 rounded-xl shadow hover:shadow-xl transition hover:bg-orange-50">
-        <img src="images/lncte.jpg" alt="LNCTE" class="w-full h-32 object-cover rounded-md mb-3">
-        <h4 class="text-lg font-semibold mb-2">Lakshmi Narain College of Technology and Excellence</h4>
-        <p class="text-gray-700 text-sm">Modern programs, expert faculty, and advanced learning labs.</p>
+      <a href="https://www.lnct.ac.in/lncte/" target="_blank" class="transform transition hover:scale-105 hover:bg-orange-50 p-4 rounded-xl shadow">
+        <img src="images/lncte.jpg" alt="LNCTE" class="w-full h-32 object-cover rounded mb-3" />
+        <h4 class="text-lg font-semibold mb-1">LNCT and Excellence</h4>
+        <p class="text-sm text-gray-700">Modern programs, expert faculty, and advanced learning labs.</p>
       </a>
-      <a href="https://www.lnctu.ac.in/" target="_blank" class="block p-4 rounded-xl shadow hover:shadow-xl transition hover:bg-orange-50">
-        <img src="images/lnctu.jpg" alt="LNCTU" class="w-full h-32 object-cover rounded-md mb-3">
-        <h4 class="text-lg font-semibold mb-2">Lakshmi Narain College of Technology University</h4>
-        <p class="text-gray-700 text-sm">A comprehensive university with multidisciplinary excellence.</p>
+      <a href="https://www.lnctu.ac.in/" target="_blank" class="transform transition hover:scale-105 hover:bg-orange-50 p-4 rounded-xl shadow">
+        <img src="images/lnctu.jpg" alt="LNCTU" class="w-full h-32 object-cover rounded mb-3" />
+        <h4 class="text-lg font-semibold mb-1">LNCT University</h4>
+        <p class="text-sm text-gray-700">A comprehensive university with multidisciplinary excellence.</p>
       </a>
-      <a href="https://www.lnct.ac.in/lnctpharmacy/" target="_blank" class="block p-4 rounded-xl shadow hover:shadow-xl transition hover:bg-orange-50">
-        <img src="images/lnctpharmacy.jpeg" alt="LNCT Pharmacy" class="w-full h-32 object-cover rounded-md mb-3">
-        <h4 class="text-lg font-semibold mb-2">Lakshmi Narain College of Technology Pharmacy</h4>
-        <p class="text-gray-700 text-sm">Focused on pharmaceutical sciences with modern labs and expert faculty.</p>
+      <a href="https://www.lnct.ac.in/lnctpharmacy/" target="_blank" class="transform transition hover:scale-105 hover:bg-orange-50 p-4 rounded-xl shadow">
+        <img src="images/lnctpharmacy.jpeg" alt="LNCT Pharmacy" class="w-full h-32 object-cover rounded mb-3" />
+        <h4 class="text-lg font-semibold mb-1">LNCT Pharmacy</h4>
+        <p class="text-sm text-gray-700">Focused on pharmaceutical sciences with modern labs and expert faculty.</p>
       </a>
     </div>
   </div>
@@ -69,48 +75,40 @@
 
 <!-- Companies Section -->
 <section id="companies" class="py-20 bg-white px-4 text-center">
-  <h3 class="text-3xl font-semibold mb-12 text-orange-600">Top Recruiters</h3>
+  <h2 class="text-3xl font-semibold mb-12 text-orange-600">Top Recruiters</h2>
   <p class="max-w-xl mx-auto text-gray-700">Coming soon: A showcase of top MNCs and tech giants hiring from LNCT.</p>
 </section>
 
 <!-- Events Section -->
 <section id="events" class="py-20 bg-gray-100 px-4 text-center">
-  <h3 class="text-3xl font-semibold mb-12 text-orange-600">Campus Events</h3>
+  <h2 class="text-3xl font-semibold mb-12 text-orange-600">Campus Events</h2>
   <p class="max-w-xl mx-auto text-gray-700">From hackathons to cultural fests – experience life at LNCT.</p>
 </section>
 
 <!-- Contact Section -->
 <section id="contact" class="py-20 bg-white px-4 text-center">
-  <h3 class="text-3xl font-semibold mb-12 text-orange-600">Get in Touch</h3>
-  <form id="contactForm" class="max-w-xl mx-auto">
-    <div class="mb-4">
-      <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded">
-    </div>
-    <div class="mb-4">
-      <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded">
-    </div>
-    <div class="mb-4">
-      <textarea id="message" name="message" placeholder="Your Message" required class="w-full p-3 border border-gray-300 rounded h-32"></textarea>
-    </div>
-    <button type="submit" class="bg-yellow-400 text-black px-6 py-3 rounded hover:bg-yellow-400 transition">Send Message</button>
+  <h2 class="text-3xl font-semibold mb-12 text-orange-600">Get in Touch</h2>
+  <form id="contactForm" class="max-w-xl mx-auto space-y-6">
+    <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded" />
+    <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded" />
+    <textarea id="message" name="message" placeholder="Your Message" required class="w-full p-3 border border-gray-300 rounded h-32"></textarea>
+    <button type="submit" class="bg-yellow-400 text-black px-6 py-3 rounded font-semibold hover:bg-yellow-300 transition duration-200">Send Message</button>
   </form>
 </section>
 
 <!-- Footer -->
-<footer class="bg-gray-800 text-white text-center py-6 mt-20">
+<footer class="bg-gray-800 text-white text-center py-6">
   <p>&copy; 2025 LNCT Group. All rights reserved.</p>
 </footer>
 
 <!-- Contact Form Script -->
 <script>
   const form = document.getElementById("contactForm");
-
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+    const name = form.name.value;
+    const email = form.email.value;
+    const message = form.message.value;
 
     try {
       const res = await fetch("https://lnct-backend.onrender.com/contact", {
@@ -118,12 +116,11 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message })
       });
-
       const data = await res.json();
       alert("Message sent successfully!");
       form.reset();
-    } catch (error) {
-      console.error("Error:", error);
+    } catch (err) {
+      console.error("Error:", err);
       alert("Something went wrong. Please try again.");
     }
   });
