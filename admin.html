@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - LNCT Group</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+  <div class="max-w-xl mx-auto bg-white p-6 rounded shadow">
+    <h1 class="text-2xl font-bold mb-6 text-center text-orange-600">Manage Announcements</h1>
+    <form id="announcementForm" class="mb-6">
+      <input type="text" id="announcement" placeholder="Enter new announcement..." required class="w-full p-3 border border-gray-300 rounded mb-4"/>
+      <button type="submit" class="w-full bg-orange-500 text-white font-semibold py-2 rounded hover:bg-orange-400">Add Announcement</button>
+    </form>
+    <ul id="announcementList" class="space-y-2"></ul>
+  </div>
+
+  <script>
+    const form = document.getElementById("announcementForm");
+    const list = document.getElementById("announcementList");
+
+    const fetchAnnouncements = async () => {
+      const res = await fetch("https://lnct-backend.onrender.com/announcements");
+      const data = await res.json();
+      list.innerHTML = data.map(item => `
+        <li class="bg-gray-200 p-3 rounded flex justify-between items-center">
+          <span>${item.text}</span>
+          <button onclick="deleteAnnouncement('${item._id}')" class="text-red-500 font-bold">X</button>
+        </li>
+      `).join('');
+    };
+
+    const deleteAnnouncement = async (id) => {
+      await fetch(`https://lnct-backend.onrender.com/announcements/${id}`, { method: "DELETE" });
+      fetchAnnouncements();
+    };
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const announcement = document.getElementById("announcement").value;
+      await fetch("https://lnct-backend.onrender.com/announcements", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: announcement })
+      });
+      form.reset();
+      fetchAnnouncements();
+    });
+
+    fetchAnnouncements();
+  </script>
+</body>
+</html>
