@@ -12,7 +12,6 @@
 <nav class="fixed top-0 left-0 w-full z-50 bg-black shadow-md px-8 py-4 flex items-center justify-between">
   <a href="https://www.lnct.ac.in/" target="_blank" class="flex items-center space-x-2">
     <img src="images/lnct-logo.png" alt="LNCT Logo" class="w-14 h-auto">
-    
   </a>
   <div class="space-x-10 hidden md:flex text-lg">
     <a href="#institutions" class="text-red-800 hover:text-orange-600 font-medium">Institutions</a>
@@ -24,7 +23,7 @@
 
 <!-- Header Section -->
 <header class="relative w-full h-screen overflow-hidden">
- <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-contain z-0 bg-black">
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
     <source src="videos/videoplayback.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -68,71 +67,66 @@
   </div>
 </section>
 
-<!-- Placeholder Companies Section -->
+<!-- Companies Section -->
 <section id="companies" class="py-20 bg-white px-4 text-center">
   <h3 class="text-3xl font-semibold mb-12 text-orange-600">Top Recruiters</h3>
   <p class="max-w-xl mx-auto text-gray-700">Coming soon: A showcase of top MNCs and tech giants hiring from LNCT.</p>
 </section>
 
-<!-- Placeholder Events Section -->
+<!-- Events Section -->
 <section id="events" class="py-20 bg-gray-100 px-4 text-center">
   <h3 class="text-3xl font-semibold mb-12 text-orange-600">Campus Events</h3>
   <p class="max-w-xl mx-auto text-gray-700">From hackathons to cultural fests – experience life at LNCT.</p>
 </section>
 
-<!-- Placeholder Contact Section -->
+<!-- Contact Section -->
 <section id="contact" class="py-20 bg-white px-4 text-center">
   <h3 class="text-3xl font-semibold mb-12 text-orange-600">Get in Touch</h3>
-  <form class="max-w-xl mx-auto" action="/contact" method="POST">
-  <div class="mb-4">
-    <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded">
-  </div>
-  <div class="mb-4">
-    <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded">
-  </div>
-  <div class="mb-4">
-    <textarea name="message" placeholder="Your Message" required class="w-full p-3 border border-gray-300 rounded h-32"></textarea>
-  </div>
-  <button type="submit" class="bg-yellow-400 text-black px-6 py-3 rounded hover:bg-yellow-400 transition">Send Message</button>
-</form>
-
+  <form id="contactForm" class="max-w-xl mx-auto">
+    <div class="mb-4">
+      <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded">
+    </div>
+    <div class="mb-4">
+      <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded">
+    </div>
+    <div class="mb-4">
+      <textarea id="message" name="message" placeholder="Your Message" required class="w-full p-3 border border-gray-300 rounded h-32"></textarea>
+    </div>
+    <button type="submit" class="bg-yellow-400 text-black px-6 py-3 rounded hover:bg-yellow-400 transition">Send Message</button>
+  </form>
 </section>
 
-<!-- Footer Section -->
+<!-- Footer -->
 <footer class="bg-gray-800 text-white text-center py-6 mt-20">
   <p>&copy; 2025 LNCT Group. All rights reserved.</p>
 </footer>
 
+<!-- Contact Form Script -->
 <script>
- const form = document.querySelector('form');
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const formData = {
-    name: form.querySelector('input[placeholder="Your Name"]').value,
-    email: form.querySelector('input[placeholder="Your Email"]').value,
-    message: form.querySelector('textarea').value
-  };
+  const form = document.getElementById("contactForm");
 
-  try {
-    const res = await fetch('http://localhost:3000/contact', {  // <-- yeh important hai!
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    });
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    if (res.ok) {
-      alert('Message sent successfully!');
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    try {
+      const res = await fetch("https://lnct-backend.onrender.com/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      const data = await res.json();
+      alert("Message sent successfully!");
       form.reset();
-    } else {
-      alert('Failed to send message.');
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong. Please try again.");
     }
-  } catch (err) {
-    alert('Error sending message.');
-  }
-});
-
+  });
 </script>
 
 </body>
