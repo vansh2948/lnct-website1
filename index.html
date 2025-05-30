@@ -3,125 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LNCT Group</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>LNCT Group of Colleges</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    @keyframes marquee {
-      0%   { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    .animate-marquee {
-      display: inline-flex;
-      animation: marquee 25s linear infinite;
-    }
-  </style>
 </head>
-<body class="bg-white text-gray-800 text-base md:text-lg font-sans">
+<body class="bg-white">
 
-<!-- Navigation Bar -->
-<nav class="fixed top-0 left-0 w-full z-50 bg-black px-6 py-4 shadow-md flex items-center justify-between">
-  <a href="https://www.lnct.ac.in/" target="_blank" class="flex items-center">
-    <img src="images/lnct-logo.png" alt="LNCT Logo" class="w-12 h-auto" />
-  </a>
-  <div class="hidden md:flex space-x-10 text-lg">
-    <a href="#institutions" class="text-orange-400 hover:text-orange-300 font-medium">Institutions</a>
-    <a href="#companies" class="text-orange-400 hover:text-orange-300 font-medium">Companies</a>
-    <a href="#events" class="text-orange-400 hover:text-orange-300 font-medium">Events</a>
-    <a href="#contact" class="text-orange-400 hover:text-orange-300 font-medium">Contact</a>
-  </div>
-</nav>
+  <!-- Hero Section -->
+  <section class="relative w-full min-h-screen flex items-center bg-gradient-to-br from-[#0F172A] to-[#1E1B4B] px-6 md:px-20 pt-28 pb-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-10 w-full max-w-7xl mx-auto">
+      
+      <!-- Left Content -->
+      <div class="text-white space-y-6">
+        <div class="inline-block bg-white/10 text-sm text-white px-4 py-1 rounded-full border border-white/30 backdrop-blur-md">
+          Excellence in Education • Healthcare • Innovation
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+          Welcome to <span class="text-yellow-400">LNCT</span><br />
+          <span class="text-yellow-400">Group of Colleges</span>
+        </h1>
+        <p class="text-gray-300 text-lg max-w-lg">
+          Empowering futures through excellence in education, healthcare, and innovation.
+          Join us in shaping tomorrow's leaders across our diverse institutions.
+        </p>
+      </div>
 
-<!-- Latest Announcements Section -->
-<section id="announcements" class="bg-yellow-50 py-2 border-t-4 border-orange-400 mt-[64px]">
-  <div class="max-w-7xl mx-auto px-4 overflow-hidden">
-    <div class="flex items-center space-x-6 whitespace-nowrap animate-marquee">
-      <span class="text-orange-600 font-bold flex-shrink-0">📢 Latest Announcements:</span>
-      <a href="#" class="text-gray-800 hover:text-orange-600 font-medium flex-shrink-0">Admissions Open for 2025-26</a>
-      <a href="#" class="text-gray-800 hover:text-orange-600 font-medium flex-shrink-0">Campus Placements Begin from July 10</a>
-      <a href="#" class="text-gray-800 hover:text-orange-600 font-medium flex-shrink-0">New Pharmacy Building Inaugurated at LNCTU</a>
-      <a href="#" class="text-gray-800 hover:text-orange-600 font-medium flex-shrink-0">Apply Now for LNCT Medical College</a>
-      <a href="#" class="text-gray-800 hover:text-orange-600 font-medium flex-shrink-0">Join Our Alumni Network Today</a>
+      <!-- Right Image -->
+      <div class="flex justify-center md:justify-end">
+        <div class="rounded-2xl overflow-hidden border-[4px] border-white shadow-xl max-w-sm">
+          <img
+            src="images/hero-girl.jpg"  <!-- ✅ Replace with your image path -->
+            alt="LNCT Student"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+      </div>
     </div>
-  </div>
-</section>
 
-<!-- Header Section (Static Background) -->
-<header class="relative w-full h-screen overflow-hidden bg-gradient-to-r from-orange-500 to-yellow-400 flex items-center justify-center text-center px-4">
-  <div class="z-10 text-white">
-    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Welcome to LNCT Group</h1>
-    <p class="text-base sm:text-lg md:text-xl">Empowering education, innovation & leadership for a brighter tomorrow</p>
-  </div>
-</header>
-
-<!-- Institutions Section -->
-<section id="institutions" class="py-20 bg-gray-100 px-4">
-  <div class="max-w-7xl mx-auto text-center">
-    <h2 class="text-3xl font-semibold mb-12 text-orange-600">Our Institutions</h2>
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-      <!-- Institution Cards here (unchanged) -->
-      <!-- ... Copy institution cards from your original code ... -->
+    <!-- Bottom Wave -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+      <svg viewBox="0 0 1200 100" preserveAspectRatio="none" class="w-full h-[100px]">
+        <path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#ffffff" />
+      </svg>
     </div>
-  </div>
-</section>
-
-<!-- Companies Section -->
-<section id="companies" class="py-20 bg-white px-4 text-center">
-  <h2 class="text-3xl font-semibold mb-12 text-orange-600">Top Recruiters</h2>
-  <p class="max-w-xl mx-auto text-gray-700">Coming soon: A showcase of top MNCs and tech giants hiring from LNCT.</p>
-</section>
-
-<!-- Events Section -->
-<section id="events" class="py-20 bg-gray-100 px-4 text-center">
-  <h2 class="text-3xl font-semibold mb-12 text-orange-600">Campus Events</h2>
-  <p class="max-w-xl mx-auto text-gray-700">From hackathons to cultural fests – experience life at LNCT.</p>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-20 bg-white px-4 text-center">
-  <h2 class="text-3xl font-semibold mb-12 text-orange-600">Get in Touch</h2>
-  <form id="contactForm" class="max-w-xl mx-auto space-y-6">
-    <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded" />
-    <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded" />
-    <textarea id="message" name="message" placeholder="Your Message" required class="w-full p-3 border border-gray-300 rounded h-32"></textarea>
-    <button type="submit" class="bg-yellow-400 text-black px-6 py-3 rounded font-semibold hover:bg-yellow-300 transition duration-200">Send Message</button>
-  </form>
-</section>
-
-<!-- Footer -->
-<footer class="bg-gray-800 text-white text-center py-6">
-  <p>&copy; 2025 LNCT Group. All rights reserved.</p>
-</footer>
-
-<!-- Contact Form Script -->
-<script>
-  const form = document.getElementById("contactForm");
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const name = form.name.value;
-    const email = form.email.value;
-    const message = form.message.value;
-
-    try {
-      const res = await fetch("https://lnct-backend.onrender.com/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message })
-      });
-      const data = await res.json();
-      alert("Message sent successfully!");
-      form.reset();
-    } catch (err) {
-      console.error("Error:", err);
-      alert("Something went wrong. Please try again.");
-    }
-  });
-</script>
+  </section>
 
 </body>
 </html>
