@@ -6,12 +6,23 @@
   <title>LNCT Group of Colleges</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white">
+<body class="bg-white scroll-smooth">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-6 md:px-20 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-[#1E1B4B]">LNCT Group</h1>
+      <ul class="flex space-x-6 text-sm md:text-base font-medium text-[#1E1B4B]">
+        <li><a href="#hero" class="hover:text-yellow-500">Home</a></li>
+        <li><a href="#about" class="hover:text-yellow-500">About</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
-  <section class="relative w-full min-h-screen flex items-center bg-gradient-to-br from-[#0F172A] to-[#1E1B4B] px-6 md:px-20 pt-28 pb-10">
+  <section id="hero" class="relative w-full min-h-screen flex items-center bg-gradient-to-br from-[#0F172A] to-[#1E1B4B] px-6 md:px-20 pt-36 pb-10">
     <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-10 w-full max-w-7xl mx-auto">
-      
+
       <!-- Left Content -->
       <div class="text-white space-y-6">
         <div class="inline-block bg-white/10 text-sm text-white px-4 py-1 rounded-full border border-white/30 backdrop-blur-md">
@@ -44,6 +55,18 @@
       <svg viewBox="0 0 1200 100" preserveAspectRatio="none" class="w-full h-[100px]">
         <path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#ffffff" />
       </svg>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-white text-[#1E1B4B] px-6 md:px-20 py-20">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 border-l-4 border-yellow-400 pl-4">About LNCT</h2>
+      <p class="text-lg leading-relaxed">
+        The LNCT Group stands as a prominent and diverse education conglomerate in Central India, known for its excellence in academia and its contribution across multiple domains. It encompasses esteemed institutions such as Lakshmi Narain College of Technology (LNCT), LNCT University, Jai Narain College of Technology (JNCT) and JNCT Professional University, and LNCT Vidhyapeeth University, among others, offering courses in engineering, medicine, pharmacy, nursing, management, and more.
+        <br><br>
+        Additionally, the group includes specialized colleges like LNCT Excellence, LNCT College of Pharmacy, LNCT College of Nursing, Rishiraj College of Dental Sciences and Research Centre in Bhopal, Indore LN Medical College, and LN Ayurved College, which further expand its footprint in professional education. Extending beyond higher education, LNCT World School provides a nurturing environment for school-level learning.
+      </p>
     </div>
   </section>
 
